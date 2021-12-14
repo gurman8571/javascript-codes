@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" id="image" id="">
+    <img alt="" id="preview">
+
+</body>
+<script>
+    let img = document.getElementById('image');
+    img.addEventListener('change', function(event) {
+        if (event.target.files.length > 0) {
+            let src = URL.createObjectURL(event.target.files[0]);
+            let preview = document.getElementById('preview');
+            preview.src = src;
+            preview.style.display = "block"
+
+        }
+    })
+</script>
+
+</html>
