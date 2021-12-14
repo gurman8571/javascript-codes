@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+body{
+    background-color: black;
+}
+        button{
+            text-align: center;
+            margin:auto;
+            display:flex;
+            color:black;
+            background-color:white;
+        }
+        
+        
+        .popupcontent{
+            height:250px;
+            width:500px;
+            background-color:#fff;
+            padding:20px;
+            border-radius:20px;
+            position:relative;
+            margin:20px;
+            display:flex;
+flex-direction:column;
+display:none;
+text-align: center;
+        }
+
+
+        input{
+            margin:20px;
+            margin-left: 120px;
+            width:50%;
+            line-height: 2;
+        }
+        body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+        }
+        #close{
+       position:absolute;
+       top:-1px;
+       right:-1px;
+          
+    }
+    #close:hover{
+           cursor:pointer; 
+
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pop up </title>
+</head>
+<body>
+   
+<div class="popupcontent" id="popupcontent">
+   
+    <p class="close" id="close">close</p> 
+<input type="email" name="" id="" placeholder="email">
+<input type="password" name="" id="" placeholder="password">
+<button type="submit">login</button>
+
+</div>
+   
+    <button id="pop">add new feild</button>
+</body>
+<script>
+    document.getElementById("pop").addEventListener("click",()=>{
+
+        document.getElementById("popupcontent").style.display="flex";
+
+    })
+    document.getElementById("close").addEventListener("click",()=>{
+
+document.getElementById("popupcontent").style.display="none";
+
+})
+
+</script>
+</html>

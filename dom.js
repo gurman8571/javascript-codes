@@ -1,0 +1,1 @@
+//document object a object inside window object

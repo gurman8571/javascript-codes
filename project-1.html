@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <div class=" hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" id="modal">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <!--
+      Background overlay, show/hide based on modal state.
+
+      Entering: "ease-out duration-300"
+        From: "opacity-0"
+        To: "opacity-100"
+      Leaving: "ease-in duration-200"
+        From: "opacity-100"
+        To: "opacity-0"
+    -->
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+
+            <!-- This element is to trick the browser into centering the modal contents. -->
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <!--
+      Modal panel, show/hide based on modal state.
+
+      Entering: "ease-out duration-300"
+        From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+        To: "opacity-100 translate-y-0 sm:scale-100"
+      Leaving: "ease-in duration-200"
+        From: "opacity-100 translate-y-0 sm:scale-100"
+        To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+    -->
+            <div class="   inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class=" bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4" ">
+                    <div class=" sm:flex sm:items-start ">
+
+                        <div class=" flex mt-2 space-x-4 ">
+
+
+                            <input type="text " name="user " id=" " placeholder="add user ">
+                            <input type="text " name="money " id=" " placeholder="add money ">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse ">
+                    <button type="button " onclick ="adduser() " class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2
+                    focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm ">
+    add
+        </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet " href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css ">
+    <link rel="stylesheet " href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css ">
+
+
+    <section class="py-1 bg-blueGray-50 ">
+        <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4 mx-auto mt-24 ">
+            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
+                <div class="rounded-t mb-0 px-4 py-3 border-0 ">
+                    <div class="flex flex-wrap items-center ">
+                        <div class="relative w-full px-4 max-w-full flex-grow flex-1 ">
+                            <h3 class="font-semibold text-base text-blueGray-700 ">Page Visits</h3>
+                        </div>
+                        <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right ">
+                            <button class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 " type="button ">See all</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block w-full overflow-x-auto ">
+                    <table class="items-center bg-transparent w-full border-collapse ">
+                        <thead>
+                            <tr>
+                                <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left ">
+                                    name
+                                </th>
+                                <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left ">
+                                    Money
+                                </th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+
+
+                            <tr>
+                                <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
+                                    /argon/profile.html
+                                </th>
+                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                    1,795
+                                </td>
+
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <footer class="relative pt-8 pb-6 mt-16 ">
+            <div class="container mx-auto px-4 ">
+                <div class="flex flex-wrap items-center md:justify-between justify-center ">
+                    <div class="w-full md:w-6/12 px-4 mx-auto text-center ">
+                        <div class="text-sm text-blueGray-500 font-semibold py-1 ">
+                            <div class="flex ">
+                                <div class="flex p-4 flex-col flex-1 space-y-4 w-1/2 ">
+                                    <button  onclick="add() " class=" w-1/2 bg-gray-200 hover:bg-gray-500 hover:text-white text-gray-500 text-center py-2 px-10 rounded ">
+                             add a user
+                                    </button>
+                                    <a href="# " class=" w-1/2 bg-red-200 hover:bg-red-500 hover:text-white text-red-500 text-center py-2 px-10 rounded ">
+                           Double Money
+                          </a>
+                                    <a href="# " class=" w-1/2 bg-yellow-200 hover:bg-yellow-500 hover:text-white text-yellow-500 text-center py-2 px-10 rounded ">
+                              sort by rich
+                          </a>
+                                    <a href="# " class=" w-1/2 bg-green-200 hover:bg-green-500 hover:text-white text-green-500 text-center py-2 px-10 rounded ">
+                             calulate all money
+                          </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </footer>
+    </section>
+
+</body>
+
+</html>
+<script>
+    var modal=document.querySelector("#modal ");
+    function add() {
+       modal.style.display = "flex ";
+    }
+    function adduser(params) {
+        modal.style.display="none ";
+    }
+</script>

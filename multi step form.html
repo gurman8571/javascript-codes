@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<style>
+    body {
+        background-color: #FFC0CB;
+    }
+    
+    .container {
+        position: relative;
+        background-color: #fff;
+        width: 360px;
+        height: 400px;
+        margin: 8% auto;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    #form2 {
+        left: 450px;
+    }
+    
+    #form3 {
+        left: 450px;
+    }
+    
+    h3 {
+        margin-bottom: 400px;
+        color: #777;
+    }
+    
+    .container form {
+        position: absolute;
+    }
+    
+    form {
+        transition: 0.5s;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <form action="" id="form1">
+            <h1>basic info 1</h1>
+            <br>
+            <input type="text" placeholder="name">
+            <br>
+            <input type="text" placeholder="name">
+            <br>
+            <input type="text" placeholder="name">
+            <br>
+            <br><br><br>
+            <div class="btn-box">
+                <button type="button" id="next1"> next</button>
+            </div>
+        </form>
+        <form action="" id="form2">
+            <h1>basic info 2</h1>
+            <br>
+            <input type="text" placeholder="email">
+            <br>
+            <input type="text" placeholder="email">
+            <br>
+            <input type="text" placeholder="email">
+            <br>
+            <br><br><br>
+            <div class="btn-box">
+                <button type="button" id="prev1">prev</button>
+                <br>
+                <button type="button" id="next2"> next</button>
+            </div>
+        </form>
+        <form action="" id="form3">
+            <h1>basic info 3</h1>
+            <br>
+            <input type="text" placeholder="age">
+            <br>
+            <input type="text" placeholder="age">
+            <br>
+            <input type="text" placeholder="age">
+            <br>
+            <br><br><br>
+            <div class="btn-box">
+                <button type="button" id="prev2"> prev</button>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+<script>
+    var form1 = document.getElementById("form1");
+    var form2 = document.getElementById("form2");
+    var form3 = document.getElementById("form3");
+    var next1 = document.getElementById("next1");
+    var next2 = document.getElementById("next2");
+    var prev1 = document.getElementById("prev1");
+    var prev2 = document.getElementById("prev2");
+
+
+    next1.addEventListener("click", () => {
+
+        form1.style.left = "-450px";
+        form2.style.left = "40px";
+    })
+    prev1.addEventListener("click", () => {
+
+        form1.style.left = "40px";
+        form2.style.left = "450px";
+    })
+    next2.addEventListener("click", () => {
+        form2.style.left = "-450px";
+        form3.style.left = "40px";
+
+    })
+    prev2.addEventListener("click", () => {
+
+        form2.style.left = "40px";
+        form3.style.left = "450px";
+    })
+</script>
+
+</html>

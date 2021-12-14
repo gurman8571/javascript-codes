@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>accordian</title>
+</head>
+<style>
+    * {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    
+    body {
+        background-color: #ede8e8;
+    }
+    
+    .contentbox {
+        --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+    }
+    
+    .label {
+        padding: 10px;
+        text-transform: capitalize;
+        background-color: hotpink;
+        color: white;
+        display: flex;
+        cursor: pointer;
+    }
+    
+    .accordian {
+        padding: auto;
+    }
+    
+    .accordian .contentbox {
+        position: relative;
+        margin: 20px 10px;
+    }
+    
+    .label::after {
+        content: "+";
+        position: absolute;
+        right: 20px;
+    }
+    
+    .active .label::after {
+        content: "-";
+        position: absolute;
+        right: 20px;
+    }
+    
+    .contentbox .content {
+        background-color: #fff;
+        color: black;
+        height: 0;
+        overflow: hidden;
+        transition: 0.5s;
+        transition: cubic-bezier(0.23, 1, 0.320, 1)
+    }
+    
+    .active .content {
+        height: auto;
+        padding: 10px;
+    }
+</style>
+
+<body>
+
+
+
+    <div class="accordian">
+
+        <div class="contentbox">
+            <div class="label">list 1</div>
+            <div class="content">
+                Lorem ipsum dolor Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem possimus corporis, nemo quia praesentium facere porro quis illo doloremque, mollitia, earum veritatis consequuntur excepturi sint modi dolor tempora voluptatibus dignissimos?sit
+                amet consectetur adipisicing elit. Perferendis debitis laborum ipsa amet magnam illum quasi. Delectus ullam, similique excepturi asperiores iure accusan tium mollitia. Dolor, quidem. Illum sit obcaecati saepe.
+            </div>
+        </div>
+        <div class="contentbox">
+            <div class="label">list 2</div>
+            <div class="content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis debitis laborum ipsa amet magnam illum quasi. Delectus ullam, similique excepturi asperiores iure Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, fugiat nihil! Voluptatibus
+                incidunt neque modi veniam labore, perferendis corporis. Quibusdam, earum consequuntur voluptatum eius perspiciatis aliquid excepturi? Incidunt, sunt numquam?accusan tium mollitia. Dolor, quidem. Illum sit obcaecati saepe.
+            </div>
+        </div>
+        <div class="contentbox">
+            <div class="label">list 3</div>
+            <div class="content">
+                Lorem ipsum dolor sit amet consectetur adipi Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa aliquid omnis ullam hic magni accusantium quia non veritatis harum tempore distinctio eius ratione totam, dignissimos quaerat aut expedita alias
+                quas? Lorem ipsum dolor sit amet consecteturng elit. Perferendis debitis laborum ipsa amet magnam illum quasi. Delectus ullam, similique excepturi asperiores iure accusan tium mollitia. Dolor, quidem. Illum sit obcaecati saepe.
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    //console.log("hlo");
+    const accordian = document.getElementsByClassName("contentbox");
+    const kl = document.getElementsByClassName("kl");
+    console.log(kl.length);
+    //console.log(accordian.length);
+    for (i = 0; i < accordian.length; i++) {
+        accordian[i].addEventListener('click', function() {
+
+            this.classList.toggle('active');
+
+        })
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<body>
+    <ul>
+        <li id="element" data="none">facebook</li>
+        <li>twitter</li>
+        <li>linkedin</li>
+    </ul>
+    <script>
+        console.log(
+            document.documentElement); //get us root element
+        console.log(document.body); //
+        //child
+        console.log(document.body.childNodes);
+        //or
+        console.log(document.body.children);
+
+        //first children
+
+
+        console.log(document.body.firstElementChild); //ul
+        console.log(document.body.lastElementChild);
+
+
+        //query selector  vs class slector 43min
+        /*
+         */
+        const li = document.querySelector("#element");
+        console.log(li.id);
+        // but we canr access element .data as it is not html defined
+
+        console.log(li.data);
+        //to access user defined attributes
+        console.log(li.getAttribute("data"));
+        // to set attributes on eleme
+        li.setAttribute("value", 1);
+        console.log(li.value);
+        //has attributes 
+        //to check att exists or not
+        //also  we can remove attributes 
+
+        //to check all attribut
+        console.log(li.attributes);
+        //ex- on min 51
+
+        //creating and removing node eleemnts
+        /*
+        1.append
+        The Element.append() method inserts a set of Node objects or DOMString 
+        objects after the last child of the Element. DOMString objects are inserted as 
+        equivalent Text nodes.
+        */
+        const inst = document.createElement('li'); //tag created
+        const inst_text = document.createTextNode("insta") //text in tage created
+        const ul = document.querySelector("ul")
+        ul.append(inst); //tag appended in ul
+        inst.append(inst_text) //text appendedin linkedin
+
+        //2.same as append but insert at beg
+        {
+
+            const inst = document.createElement('li'); //tag created
+            const inst_text = document.createTextNode("snap") //text in tage created
+            const ul = document.querySelector("ul")
+            ul.prepend(inst); //tag appended in ul
+            inst.prepend(inst_text) //text appendedin linkedin
+        }
+        //3.before
+        //4.after
+        {
+
+
+
+        }
+    </script>
+
+</body>
+
+
+
+</html>
