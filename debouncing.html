@@ -1,0 +1,37 @@
+<!---- debouncing -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="search" name="" id="" onchange="betterfunc()">
+</body>
+
+<script>
+    const getdata=(x)=>{
+        console.log('fetching data'+x);
+    }
+    // now as we type a alpha in serachbar our func (api get called )
+    //so to call it when user pause typing debouncing come into plsy 
+    //basically we give some delay between 2 press events
+
+const debounce=(fn,delay)=>{
+    return function(...args){
+       setTimeout(() => {
+           getdata(2);
+       }, delay);
+
+    }
+}
+
+    const betterfunc= debounce(getdatas,100);
+    
+
+
+
+</script>
+</html>

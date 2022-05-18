@@ -11,7 +11,7 @@ const users=[
 
 
 ];
-const userproblem=users.map( users=>  `${users.name} have problem ${users.problem}`);
+const userproblem=users.map( users =>  `${users.name} have problem ${users.problem}`);
 console.log(userproblem);
 
 //objective 2 to give op kids:no of people having same kids
@@ -33,8 +33,9 @@ const userkids=users.reduce((acc,curr)=>{
 
 const kids_1=users.filter((x)=>{
     return x.kids == 3;
-      }).map((x)=>x.name);
-      console.log(kids_1);
+      })
+ 
+      
 
 // obj4 achieving obj 3 with help of filter
 
@@ -75,7 +76,10 @@ console.log(soetbygender);
 
 
 
+kids_1.map((x)=>{
 
+  console.log(x);
+})
 
 
 

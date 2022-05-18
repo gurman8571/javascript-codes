@@ -5,6 +5,7 @@ function getage(a, b) {
     console.log(this.name + a + b);
 }
 
+
 let obj = {
     name: "gurman",
     age: "21",
@@ -12,17 +13,15 @@ let obj = {
 
         console.log(this.age);
     }
-
 }
+
 let obj2 = {
         name: "daman",
         age: "12",
-
-
-
     }
+
     //now to call same func for obj 2
-obj.details.call(obj2); //call to a func of other obj this is scalled func borrowing
+obj.details.call(obj2);        //call to a func of other obj this is scalled func borrowing
 getage.call(obj, "h", "j");
 
 

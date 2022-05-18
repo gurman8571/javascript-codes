@@ -1,0 +1,31 @@
+
+<script>
+    // local storage is a function of windows which takes a key value pair and store in loacl storage
+    window.localStorage
+        //to set item in local storage
+    localStorage.setItem("name", "gurman");
+
+    //get value from bject creted in local storage
+    let name = localStorage.getItem("name");
+    console.log(name); //op-gurman
+    //clear local storage
+    localStorage.clear();
+    // we can remove a particular key
+    localStorage.removeItem('name')
+
+    localStorage.setItem("name", "gurman");
+
+    //to add array in local localStorage
+
+    let array = [1, 'gurman', 2];
+    localStorage.setItem("array", JSON.stringify(array)); //convert to string
+    let valu1 = JSON.parse(localStorage.getItem("array")); //convert str to array
+    document.write(valu1);
+
+    // session storage same just use seesion instead of local\
+
+    /*
+    session storage is finished as the session is closed 
+    while the local storage is for lifetime
+    */
+</script>

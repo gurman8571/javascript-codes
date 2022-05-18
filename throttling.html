@@ -1,0 +1,29 @@
+
+<!---used to control the execution of func if user clicks button again and again--->
+<button onclick="better_hi()">
+    click
+</button>
+<script>
+
+    const hi=()=>{
+        console.log('helo');
+    }
+
+    const throttle=(func,limit)=>{
+       let flag=true;
+     return function(){
+         // if true execute func and make false so user cant execute again anad again
+        if (flag) {
+          func();
+          flag=false;
+          //expire the limit
+          setTimeout(() => {
+              flag=true;
+          }, limit);                
+       }
+     }
+
+}
+   const better_hi= throttle(hi,2000);
+
+</script>

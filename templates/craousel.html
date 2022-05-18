@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<style>
+
+#next{
+ position:absolute;
+  top: 50%; 
+  left:72%;
+  background:none;
+  color:black;
+  border:none;
+   font-size:25px;
+   cursor: pointer;
+   background-color:white;
+   transform: translateY(-50%);
+}
+#prev{
+    position:absolute;
+  top: 50%; 
+ left:28%; 
+ background:none;
+  color:black;
+  background-color:white;
+  border:none;
+  font-size:25px;
+   cursor: pointer;
+   transform: translateY(-50%);
+}
+
+.main{
+    display: flex;
+     justify-content:center;
+      height:700px;
+ 
+}
+.craousel{
+    align-self: center;
+}
+.dot{
+    border-radius: 90%;
+    padding:7px;
+    border: 0.5px solid black;
+    margin:5px;
+cursor: pointer; 
+   
+       
+}
+.dots{
+position:absolute;
+
+display:flex;
+left:48%;
+
+}
+.active{
+background-color:blue;
+
+}
+
+
+</style>
+<body>
+ <div class="main">
+
+    <div class="craousel">
+
+        <img  id="slide" height="300" width="800" alt="">
+        <br>
+        <button onclick="next()" id="next"><i class="fa-solid fa-angle-right"></i></button>
+        <button onclick="prev()" id="prev"><i class="fa-solid fa-angle-left"></i></button>
+        <br>
+     <div class="dots">
+        <input type="radio" name="radio"  class=" dot" id="dot1" checked></input>
+        <input type="radio" name="radio"class="dot"id="dot2"></input>
+        <input type="radio" name="radio"class="dot"id="dot3"></input>
+        <input type="radio" name="radio"class="dot"id="dot4"></input>
+     </div>
+     </div>
+ </div>
+</body>
+
+
+<script>
+
+    const images=["https://th.bing.com/th/id/OIP.PYipJ_hSncugM2SwnZitvgHaEK?w=321&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7",
+            "https://th.bing.com/th/id/OIP.AiWFWy2E7XXt7nLTNtuUpwHaEK?w=321&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7",
+            "https://th.bing.com/th/id/OIP.avxhtQqr5FoubGjq4sIXugHaEo?w=289&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7",
+            "https://th.bing.com/th/id/OIP.aqoLTvkHjuFNitn81Ct-xgHaLN?w=120&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7"
+    ]
+
+const slide= document.getElementById("slide")
+var elements = document.getElementsByClassName("dot");
+i=0;
+slide.src=images[0];
+const next=()=>{
+    console.log(i);
+
+if (i == images.length-1) {
+    
+    i=0;
+    
+}
+else{
+    i++;
+    
+   
+}
+slide.src=images[i];
+elements[i].checked=true
+
+
+
+
+
+}
+const prev=()=>{
+    //console.log(i);
+    if (i == 0) {
+       i=images.length-1;
+}
+else{
+    i--;
+}
+    slide.src=images[i];
+    elements[i].checked=true
+
+}
+
+
+
+
+dot1.addEventListener("click",()=>{
+    slide.src=images[0];
+})
+dot2.addEventListener("click",()=>{
+    slide.src=images[1];
+})
+dot3.addEventListener("click",()=>{
+    slide.src=images[2];
+})
+dot4.addEventListener("click",()=>{
+    slide.src=images[3];
+})
+
+
+</script>
+</html>
